@@ -10,7 +10,7 @@ function kill_and_be_killed {
 	return 0
 }
 
-$@ &
+"$@" &
 
 e=1
 while [ $e -gt 0 ] ; do
