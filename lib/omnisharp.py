@@ -11,18 +11,14 @@ import traceback
 import sys
 import signal
 
-from ..launchers import launcher
-
 from .helpers import get_settings
-from .helpers import current_solution_or_folder
-from .helpers import current_project_folder
-from .helpers import current_solution_or_project_json_folder
+from .helpers import current_solution_filepath_or_project_rootpath
 from .urllib3 import PoolManager
 
 from queue import Queue
 
 IS_EXTERNAL_SERVER_ENABLE = False
-IS_NT_CONSOLE_VISIBLE = False
+IS_NT_CONSOLE_VISIBLE = False 
 
 launcher_procs = {
 }
@@ -62,7 +58,7 @@ def urlopen_async(url, callback, data, timeout):
     WorkerThread.add_work(url, data, timeout, callback)
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
-    solution_path =  current_solution_or_project_json_folder(view)#current_solution_or_folder(view)
+    solution_path =  current_solution_filepath_or_project_rootpath(view)
 
     print('response:', solution_path)
     if solution_path is None or solution_path not in server_ports:
@@ -122,9 +118,8 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
         data,
         timeout)
 
-
 def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
-    solution_path =  current_solution_or_project_json_folder(view)#current_solution_or_folder(view)
+    solution_path =  current_solution_filepath_or_project_rootpath(view)
 
     print(solution_path)
     print(server_ports)
@@ -169,7 +164,6 @@ def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
         data,
         timeout)
 
-
 def _available_port():
     if IS_EXTERNAL_SERVER_ENABLE:
         return 2000
@@ -181,22 +175,8 @@ def _available_port():
 
     return port
 
-def _run_omni_sharp_launcher(solution_path, port, config_file):
-    return launcher.run(port, solution_path, config_file)
-
-def _communicate_omni_sharp_launcher(launcher_proc, solution_path):
-    print('start_omni_sharp_launcher:%s' % solution_path)
-    stdin_data, stderr_data = launcher_proc.communicate()
-    if not stderr_data:
-        print('exit_omni_sharp_launcher:%s' % solution_path)
-        return
-
-    for stderr_line in stderr_data.splitlines():
-        print('stop_omni_sharp_launcher:%s error:%s' % (target_name, stderr_line))
-
-
 def create_omnisharp_server_subprocess(view):
-    solution_path = current_solution_or_project_json_folder(view) #current_solution_or_folder(view)
+    solution_path = current_solution_filepath_or_project_rootpath(view) 
     if solution_path in launcher_procs:
         print("already_bound_solution:%s" % solution_path)
         return
@@ -214,14 +194,53 @@ def create_omnisharp_server_subprocess(view):
         omni_port = 2000
     else:
         try:
-            launcher_proc = _run_omni_sharp_launcher(
-                solution_path,
-                omni_port,
-                config_file)
+            omni_exe_paths = find_omni_exe_paths()
+            omni_exe_path = "\"" + omni_exe_paths[0] + "\""
+
+            args = [
+                omni_exe_path, 
+                '-s', solution_path,
+                '-p', str(omni_port),
+                '-config', config_file,
+                '--hostPID', str(os.getpid())
+            ]
+
+            cmd = ' '.join(args)
+            print(cmd)
+            
+            view.window().run_command("exec",{"cmd":cmd,"shell":"true","quiet":"true"})
+            view.window().run_command("hide_panel", {"panel": "output.exec"})
+
         except Exception as e:
             print('RAISE_OMNI_SHARP_LAUNCHER_EXCEPTION:%s' % repr(e))
             return
 
-    launcher_procs[solution_path] = launcher_proc
+    launcher_procs[solution_path] = True
     server_ports[solution_path] = omni_port
+
+def find_omni_exe_paths():
+    if os.name == 'posix':
+        source_file_path = os.path.realpath(__file__)
+        script_name = 'omnisharp'
+    else:
+        source_file_path = os.path.realpath(__file__).replace('\\', '/')
+        script_name = 'omnisharp.cmd'
+
+    source_dir_path = os.path.dirname(source_file_path)
+    plugin_dir_path = os.path.dirname(source_dir_path)
+    print(plugin_dir_path)
+
+    omni_exe_candidate_rel_paths = [
+        'omnisharp-roslyn/artifacts/build/omnisharp/' + script_name,
+        'PrebuiltOmniSharpServer/' + script_name,
+    ]
+
+    omni_exe_candidate_abs_paths = [
+        '/'.join((plugin_dir_path, rel_path))
+        for rel_path in omni_exe_candidate_rel_paths
+    ]
+
+    return [omni_exe_path 
+        for omni_exe_path in omni_exe_candidate_abs_paths
+        if os.access(omni_exe_path, os.R_OK)]
 
