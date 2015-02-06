@@ -18,6 +18,10 @@
       "version": "1.0.0-beta2",
       "sha": "QSY7ZtwJVi7JTl6pdbiMMcnNmYs4+n9Fptuboc4liiy7lPectRjUWMpCRINd6pG7e9mesyUpGgQgfxVlUxcDfw=="
     },
+    "Microsoft.CodeAnalysis": {
+      "version": "1.0.0.0-beta2",
+      "sha": "xLX8zM+hKxSktBbpHCB5+NJVwhtVUqpA+2KEGk8VyyGS1zesXyzkfqfJfMuQO55qYrDR+rbsaqI38MraCnFWjw=="
+    },
     "Microsoft.CodeAnalysis.CSharp": {
       "version": "1.0.0.0-beta2",
       "sha": "h6ZAonCRYCeqh9fZzwN9MdZ9Pi2bQESoJQuuWhe6kUkf2rESh/dSrX++dqa6nl1IouHzSgX8s+VMniM6jS5Rcg=="
@@ -39,12 +43,16 @@
       "sha": "vk9no0UoHk9Cv+IwJt4Q99YVh+wAqrBU/dYHV5eWVKi/qhXjF24b0t0RPJVk8va3ELcsjFnmGArMyZpFTbNDMw=="
     },
     "Microsoft.Framework.Cache.Memory": {
-      "version": "1.0.0-beta1",
-      "sha": "k56hDpfQ2TXtQ1EAY2nLcmcDSN1bUpFdUJ7ahVuHRW5v35fipvjKeFonaehY4rCUcw/7MWMbEbZojEceFNThOQ=="
+      "version": "1.0.0-beta2",
+      "sha": "fMznF+CCPcnbSVJQpgYsV+CfqlmdfyrkJ/PD0xX1X4HTpwTYreACakmZW/I293x8bXjtuszmLwnqh10EVbMX1w=="
     },
     "Microsoft.Composition": {
       "version": "1.0.27",
       "sha": "pwu80Ohe7SBzZ6i69LVdzowp6V+LaVRzd5F7A6QlD42vQkX0oT7KXKWWPlM/S00w1gnMQMRnEdbtOV12z6rXdQ=="
+    },
+    "ICSharpCode.NRefactory": {
+      "version": "6.0.0-alpha2",
+      "sha": "eYYsybhsYSEi5/G9TDIcV2OxEWBqyAGegLHaNrJFrxF0NVt5MiCj9IoEtFF5ufukWlgB0SCLJKdLJtsFvkw/eQ=="
     },
     "Microsoft.AspNet.Hosting": {
       "version": "1.0.0-beta2",
@@ -94,13 +102,25 @@
       "version": "1.0.0-beta2",
       "sha": "L14wb0KS26DaRGPFb93l0Ju0vTOaUZKYX9Oz1h0BaB76ob3765qPWG2RqU6WM6QbC6PFQaP2DDBq+ZFkYD5cIg=="
     },
-    "Microsoft.AspNet.FileSystems": {
-      "version": "1.0.0-beta2",
-      "sha": "snAbn38rys6Krd37EHnWRndEM0HuKP/3SCJNylgIjjS7BzzWGkCr9cFqL/1XKyS0A7wXgkZZn8TDYrzvfV8xDg=="
-    },
     "Microsoft.Framework.OptionsModel": {
       "version": "1.0.0-beta2",
       "sha": "as+exnC0Ac/YONL4qRtJzSszEATbM1QBTT1qlG4up9xu1J52T4uSs9OHi5LliV51OwWQTrcPHZN32fYOw8b30g=="
+    },
+    "Microsoft.Framework.Runtime.Interfaces": {
+      "version": "1.0.0-beta2",
+      "sha": "BgxwcDCczSX7D1V3cczjKLAnekgIlVcZMG73KPCKrRzGxmoMd1v1t5DI9STNmMk1DqnYgYJHBrG9FQsQ2nB3Og=="
+    },
+    "System.Collections.Immutable": {
+      "version": "1.1.32-beta",
+      "sha": "ckfFUM6keywtdZ+DT7/KWSmQ0YRLHu4OCnKKWbumvO8uDcKtCoxjLKcaWNzguGCSTy2r2Ap9gojazgCwMYw0bQ=="
+    },
+    "System.Reflection.Metadata": {
+      "version": "1.0.17-beta",
+      "sha": "PyXG0gfs9gDDj4Km2PKadmPOMsH7IL+S4zckKMESdgv34f0I063VKi+RgmZ8f4wtgBVQTw8UrYE911lpePFAgA=="
+    },
+    "Microsoft.AspNet.FileSystems": {
+      "version": "1.0.0-beta2",
+      "sha": "snAbn38rys6Krd37EHnWRndEM0HuKP/3SCJNylgIjjS7BzzWGkCr9cFqL/1XKyS0A7wXgkZZn8TDYrzvfV8xDg=="
     },
     "Microsoft.AspNet.Mvc.Core": {
       "version": "6.0.0-beta2",
@@ -130,21 +150,13 @@
       "version": "1.0.0-beta2",
       "sha": "PDCM1Iyx0Fn7vbmdFZzra9PX406rOOazxUhd4seysWT0Ok1sID/ckekkiQIBz33pmdKY9F8IsSE0x0yoSrJPNA=="
     },
-    "System.Collections.Immutable": {
-      "version": "1.1.32-beta",
-      "sha": "ckfFUM6keywtdZ+DT7/KWSmQ0YRLHu4OCnKKWbumvO8uDcKtCoxjLKcaWNzguGCSTy2r2Ap9gojazgCwMYw0bQ=="
-    },
-    "System.Reflection.Metadata": {
-      "version": "1.0.17-beta",
-      "sha": "PyXG0gfs9gDDj4Km2PKadmPOMsH7IL+S4zckKMESdgv34f0I063VKi+RgmZ8f4wtgBVQTw8UrYE911lpePFAgA=="
+    "Microsoft.Framework.DependencyInjection": {
+      "version": "1.0.0-beta2",
+      "sha": "1h7325dki5zEUCuDzTlbCcR62f9FYJbhHQEDtelx/a2i9Nhx171cAMxSxc3eNSes0INNLU2xQTGYJmhu4GoORw=="
     },
     "Microsoft.AspNet.FileSystems.Interfaces": {
       "version": "1.0.0-beta2",
       "sha": "+YLIzbVvQ9JVyDybUBapSXvR5rJlo4/MZS0ZK7mC0FjBRroPNqln7XgOUwMw+nPsEMP9bgpaKmkAdS6C9EYJ0A=="
-    },
-    "Microsoft.Framework.DependencyInjection": {
-      "version": "1.0.0-beta2",
-      "sha": "1h7325dki5zEUCuDzTlbCcR62f9FYJbhHQEDtelx/a2i9Nhx171cAMxSxc3eNSes0INNLU2xQTGYJmhu4GoORw=="
     },
     "Microsoft.AspNet.Mvc.HeaderValueAbstractions": {
       "version": "1.0.0-beta2",
@@ -169,10 +181,6 @@
     "Microsoft.AspNet.Razor.Runtime": {
       "version": "4.0.0-beta2",
       "sha": "kWz7YstnK2UCYEs+is2ozRDIy2xRC6lRDVO1DzBXWptYKdEM20AEjHvggw0MJolfuaQ3ZLmc3vVUDKEw8HbDCw=="
-    },
-    "Microsoft.Framework.Runtime.Interfaces": {
-      "version": "1.0.0-beta2",
-      "sha": "BgxwcDCczSX7D1V3cczjKLAnekgIlVcZMG73KPCKrRzGxmoMd1v1t5DI9STNmMk1DqnYgYJHBrG9FQsQ2nB3Og=="
     },
     "Microsoft.AspNet.Razor": {
       "version": "4.0.0-beta2",
