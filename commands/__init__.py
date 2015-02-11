@@ -21,6 +21,7 @@ from .build_project import OmniSharpBuildProject
 from .reload_solution import OmniSharpReloadSolution
 from .navigate_to import OmniSharpNavigateTo
 from .show_server_output import OmniSharpShowServerOutput
+from .format import OmniSharpFormat
 
 __all__ = [
     'OmniSharpGoToDefinition',
@@ -45,5 +46,6 @@ __all__ = [
     'OmniSharpBuildProject',
     'OmniSharpReloadSolution',
     'OmniSharpNavigateTo',
-    'OmniSharpShowServerOutput'
+    'OmniSharpShowServerOutput',
+    'OmniSharpFormat'
 ]
