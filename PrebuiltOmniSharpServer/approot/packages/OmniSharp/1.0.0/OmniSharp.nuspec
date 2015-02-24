@@ -10,30 +10,30 @@
     <description>OmniSharp</description>
     <dependencies>
       <group targetFramework="Asp.Net5.0">
-        <dependency id="Kestrel" version="1.0.0-beta2" />
-        <dependency id="Microsoft.AspNet.Mvc" version="6.0.0-beta2" />
-        <dependency id="Microsoft.AspNet.Diagnostics" version="1.0.0-beta2" />
-        <dependency id="Microsoft.CodeAnalysis" version="1.0.0.0-beta2" />
-        <dependency id="Microsoft.CodeAnalysis.CSharp" version="1.0.0.0-beta2" />
-        <dependency id="Microsoft.CodeAnalysis.CSharp.Workspaces" version="1.0.0.0-beta2" />
-        <dependency id="Microsoft.CodeAnalysis.VisualBasic.Workspaces" version="1.0.0.0-beta2" />
-        <dependency id="Microsoft.Framework.Logging.Console" version="1.0.0-beta2" />
-        <dependency id="Microsoft.Framework.ConfigurationModel.Json" version="1.0.0-beta2" />
-        <dependency id="Microsoft.Framework.Cache.Memory" version="1.0.0-beta2" />
+        <dependency id="Kestrel" version="1.0.0-beta3" />
+        <dependency id="Microsoft.AspNet.Mvc" version="6.0.0-beta3" />
+        <dependency id="Microsoft.AspNet.Diagnostics" version="1.0.0-beta3" />
+        <dependency id="Microsoft.CodeAnalysis" version="1.0.0-beta3" />
+        <dependency id="Microsoft.CodeAnalysis.CSharp" version="1.0.0-beta3" />
+        <dependency id="Microsoft.CodeAnalysis.CSharp.Workspaces" version="1.0.0-beta3" />
+        <dependency id="Microsoft.CodeAnalysis.VisualBasic.Workspaces" version="1.0.0-beta3" />
+        <dependency id="Microsoft.Framework.Logging.Console" version="1.0.0-beta3" />
+        <dependency id="Microsoft.Framework.ConfigurationModel.Json" version="1.0.0-beta3" />
+        <dependency id="Microsoft.Framework.Cache.Memory" version="1.0.0-beta3" />
         <dependency id="Microsoft.Composition" version="1.0.27" />
         <dependency id="ICSharpCode.NRefactory" version="6.0.0-alpha2" />
       </group>
       <group targetFramework="Asp.NetCore5.0">
-        <dependency id="Kestrel" version="1.0.0-beta2" />
-        <dependency id="Microsoft.AspNet.Mvc" version="6.0.0-beta2" />
-        <dependency id="Microsoft.AspNet.Diagnostics" version="1.0.0-beta2" />
-        <dependency id="Microsoft.CodeAnalysis" version="1.0.0.0-beta2" />
-        <dependency id="Microsoft.CodeAnalysis.CSharp" version="1.0.0.0-beta2" />
-        <dependency id="Microsoft.CodeAnalysis.CSharp.Workspaces" version="1.0.0.0-beta2" />
-        <dependency id="Microsoft.CodeAnalysis.VisualBasic.Workspaces" version="1.0.0.0-beta2" />
-        <dependency id="Microsoft.Framework.Logging.Console" version="1.0.0-beta2" />
-        <dependency id="Microsoft.Framework.ConfigurationModel.Json" version="1.0.0-beta2" />
-        <dependency id="Microsoft.Framework.Cache.Memory" version="1.0.0-beta2" />
+        <dependency id="Kestrel" version="1.0.0-beta3" />
+        <dependency id="Microsoft.AspNet.Mvc" version="6.0.0-beta3" />
+        <dependency id="Microsoft.AspNet.Diagnostics" version="1.0.0-beta3" />
+        <dependency id="Microsoft.CodeAnalysis" version="1.0.0-beta3" />
+        <dependency id="Microsoft.CodeAnalysis.CSharp" version="1.0.0-beta3" />
+        <dependency id="Microsoft.CodeAnalysis.CSharp.Workspaces" version="1.0.0-beta3" />
+        <dependency id="Microsoft.CodeAnalysis.VisualBasic.Workspaces" version="1.0.0-beta3" />
+        <dependency id="Microsoft.Framework.Logging.Console" version="1.0.0-beta3" />
+        <dependency id="Microsoft.Framework.ConfigurationModel.Json" version="1.0.0-beta3" />
+        <dependency id="Microsoft.Framework.Cache.Memory" version="1.0.0-beta3" />
         <dependency id="Microsoft.Composition" version="1.0.27" />
         <dependency id="System.IO.FileSystem.Watcher" version="4.0.0-beta-22231" />
         <dependency id="System.Net.Sockets" version="4.0.0-beta-22231" />
