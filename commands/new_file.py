@@ -30,13 +30,7 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
     def _on_done(self,filename):
         originalfilename = filename
 
-        root = sublime.active_window().folders()[0]
-        root = os.path.basename(root)
-        
-        indexpos = self.incomingpath.index(root)
-
-        namespace = self.incomingpath[indexpos:]
-        namespace = namespace.replace(os.path.sep,".")
+        namespace = self.get_namespace()
 
         filename =  os.path.basename(filename)
         filename = os.path.splitext(filename)[0]
@@ -53,9 +47,6 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
             omnisharp.get_response(self.view, '/addtoproject', self._handle_addtoproject, params)
                 
             sublime.active_window().open_file(originalfilename)
-
-
-
 
     def _handle_addtoproject(self, data):
         print('file added to project')
@@ -116,3 +107,24 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
         code = code.replace('${classname}', filename)
 
         return code
+
+
+    def get_namespace(self):
+        # Try to create namespace based on path relative to project.json file
+        current_dir = self.incomingpath
+        while current_dir:
+            check_file = os.path.join(current_dir, 'project.json')
+            print('get_namespace: looking for {0}'.format(check_file))
+            if os.path.isfile(check_file):
+                indexpos = len(os.path.dirname(current_dir)) + 1
+                namespace = self.incomingpath[indexpos:].replace(os.path.sep, '.')
+                print('get_namespace: {0} {1} {2}'.format(current_dir, indexpos, namespace))
+                return namespace
+            else:
+                current_dir = os.path.dirname(current_dir)
+
+        # Fallback to the old way of doing it
+        root = sublime.active_window().folders()[0]
+        root = os.path.basename(root)
+        indexpos = self.incomingpath.index(root)
+        return incomingpath[indexpos:].replace(os.path.sep, '.')
