@@ -44,43 +44,13 @@
 
         git clone https://github.com/OmniSharp/omnisharp-sublime.git OmniSharp
 
+        
+
 3. Move to plugin directory, update submodule and build.
 
         cd OmniSharp
-        git submodule update --init --recursive
-        ./build.sh
-
-# Project Setting
-The server will automatically find the the solution file from the folder you have opened in Sublime.  For ASP.Net vNext applications it will find the project.json file.  If you have multiple solutions you have to specify the solution file you wish to use in a sublime-project. 
-
-    Go to `File -> Open` and select the folder with your solution in it.
-    
-    Go to `Project -> Save Project As` and save a YOURPROJECTNAME.sublime-project in the same location as your *.sln
-    
-    Open your YOURPROJECTNAME.sublime-project file that should now appear in the sidebar on the left
-    
-    Enter the location to the *.sln file like below
-
-## Example of a sublime-project
-
-    {
-        "folders":
-        [
-            {
-                "follow_symlinks": true,
-                "path": "."
-            }
-        ],
-        "solution_file": "./testconsoleprj.sln"
-    }
-    
- Once the `YOURPROJECT.sublime-project` is set up and saved follow the below:
-    
-    Close Sublime (YMMV but this seems to be the best way to open the YOURPROJECTNAME.sublime-project)
-    
-    Open Sublime
-    
-    Click `Project -> Open Project`, and select your YOURPROJECT.sublime-project file
+        git checkout roslyn
+
 
 
 # C# language-specific settings
