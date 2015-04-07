@@ -4,7 +4,7 @@
  It works on: 
    1. Mac OSX
    2. Linux
-   3. Windows (**NOTE : needs Python installed AND in your PATH**)
+   3. Windows 
  
 
 # Features
@@ -33,10 +33,7 @@
 
 #Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
-
-#Installation
-
- * Using [Package Control](https://packagecontrol.io), install the package called `OmniSharp`
+
 
 # Building From Source
 1. Move to ST3 plugin directory in console.
