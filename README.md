@@ -79,6 +79,8 @@ The server will automatically find the the solution file from the folder you hav
 }
 ```
 
+Note: Selecting project folder other than the one containing the *.sln files and explicitly setting the "solution_file" path to your *.sln file will cause OmniSharpServer to crash.
+
 Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
 
 1. Close Sublime (YMMV but this seems to be the best way to open the `YOURPROJECTNAME.sublime-project`)
